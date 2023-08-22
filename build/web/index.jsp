@@ -20,18 +20,28 @@
         Statement st = null;
         ResultSet rs = null;
         %>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm">
+        <br>
         
-        <br>
-        <h1 style="margin-left: 100px;"class="fw-bold">Alumnos</h1>
-        <br>
         <table style="margin:0 20px; "class="table table-striped">      
           
   <thead>
     <tr>
+        <th scope="col" colspan="4" class="text-center">ALUMNO</th>
+        <th scope="col">
+        <a href="crear.jsp"><i class="btn btn-primary btn-lg">Nuevo Ingreso</i></a>
+        </th>
+    </tr>
+    <tr>
       <th scope="col">ID</th>
       <th scope="col">NOMBRE</th>
       <th scope="col">APELLIDO</th>
+      <th scope="col">TELEFONO</th>
       <th scope="col">CARRERA</th>
+      <th scope="col">CONTRASEÑA</th>
+      <th scope="col">ACCIONES</th>
       </tr>
   </thead>
   <tbody>
@@ -43,11 +53,18 @@
      while (rs.next()){
          %>
          
-          <tr>
-              <th scope="row"><%= rs.getInt("id") %></th>
-      <td><%= rs.getString("nombre") %></td>
-      <td><%= rs.getString("apellido") %></td>
-      <td><%= rs.getString("carrera") %></td>
+    <tr>
+        <th scope="row"><%= rs.getInt("id") %></th>
+        <td><%= rs.getString("nombre") %></td>
+        <td><%= rs.getString("apellido") %></td>
+        <td><%= rs.getString("telefono") %></td>        
+        <td><%= rs.getString("carrera") %></td>
+        <td><%= rs.getString("password") %></td>
+        <td>
+            <a href="editar.jsp?id=<%= rs.getInt("id")%>&nombre=<%= rs.getString("nombre")%>&apellido=<%= rs.getString("apellido")%>&telefono=<%= rs.getString("telefono")%>&carrera=<%= rs.getString("carrera")%>&password=<%= rs.getString("password")%>" class="btn btn-primary btn-lg" role="button" aria-disabled="true">EDITAR</a>
+            <a href="borrar.jsp?id=<%= rs.getInt("id")%>" class="btn btn-danger btn-lg" role="button" aria-disabled="true">ELIMINAR</a>          
+        </td>
+      
     </tr>
     <% }
     %>
@@ -56,8 +73,9 @@
    
    </tbody>
 </table>
-        
-        
+            </div>
+        </div>
+      </div>  
         
     </body>
 </html>
