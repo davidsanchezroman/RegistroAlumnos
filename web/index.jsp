@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/513bd683e0.js" crossorigin="anonymous"></script>
         <title>Registro Alumnos</title>
     </head>
     <body class="p-3 mb-2 bg-light text-dark">
@@ -31,7 +32,7 @@
     <tr>
         <th scope="col" colspan="4" class="text-center">ALUMNO</th>
         <th scope="col">
-        <a href="crear.jsp"><i class="btn btn-primary btn-lg">Nuevo Ingreso</i></a>
+        <a href="crear.jsp"><i class="fa-solid fa-user-plus""> Nuevo</i></a>
         </th>
     </tr>
     <tr>
@@ -61,8 +62,8 @@
         <td><%= rs.getString("carrera") %></td>
         <td><%= rs.getString("password") %></td>
         <td>
-            <a href="editar.jsp?id=<%= rs.getInt("id")%>&nombre=<%= rs.getString("nombre")%>&apellido=<%= rs.getString("apellido")%>&telefono=<%= rs.getString("telefono")%>&carrera=<%= rs.getString("carrera")%>&password=<%= rs.getString("password")%>" class="btn btn-primary btn-lg" role="button" aria-disabled="true">EDITAR</a>
-            <a href="borrar.jsp?id=<%= rs.getInt("id")%>" class="btn btn-danger btn-lg" role="button" aria-disabled="true">ELIMINAR</a>          
+            <a href="editar.jsp?id=<%= rs.getInt("id")%>&nombre=<%= rs.getString("nombre")%>&apellido=<%= rs.getString("apellido")%>&telefono=<%= rs.getString("telefono")%>&carrera=<%= rs.getString("carrera")%>&password=<%= rs.getString("password")%>>"<i class="fa fa-pencil-alt"></i> Editar</a>
+            <a href="borrar.jsp?id=<%= rs.getInt("id")%>"><i class="fa fa-trash-alt"></i> Eliminar</a>          
         </td>
       
     </tr>
